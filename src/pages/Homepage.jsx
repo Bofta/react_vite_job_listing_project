@@ -9,9 +9,9 @@ const Homepage = () => {
     <>
         <Hero />
         <HomeCards />
-        <JobsListings />
+        <JobsListings isHome={true} />
         <ViewAllJobs />
     </>
   );
 };
-export default Homepage
+export default Homepage;
