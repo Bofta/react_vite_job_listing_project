@@ -25,8 +25,7 @@ if (!showFullDescription) {
                <button 
                onClick={() => setShowFullDescription((prevState) => 
                 !prevState)}
-               className="text-indigo-500 mb-5"> {showFullDescription ? 'Less' : 'More'} </button>
-              
+               className="text-indigo-500 mb-5"> {showFullDescription ? 'Less' : 'More'} </button>   
             
 
 

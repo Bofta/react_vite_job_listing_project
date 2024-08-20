@@ -3,15 +3,27 @@ import JobListing from './JobListing';
 
 
 const JobsListings = ({ isHome = false }) => {
+  // Jobs State and a function to update the state
   const [jobs, setJobs] = useState([]);
+
+  // Loading Spinner
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchJobs = async () => {
-      const res = await fetch('http://localhost:8000/jobs');
+
+    try {
+      const fetchJobs = async () => {
+        const res = await fetch('http://localhost:8000/jobs');
+        const data = await res.json();
+        setJobs(data);
+    } catch (error) {
+      console.log('Error fetching data', error);
+    } finally {
+      setLoading(false);
+    }
+    
     }
   }, []);
-   
 
   return (
     <section className="bg-blue-50 px-4 py-10">
